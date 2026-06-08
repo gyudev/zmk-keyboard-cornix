@@ -282,7 +282,7 @@
 &kp TAB  &none             &none         &none                &kp PAGE_UP          &kp PAGE_DOWN                     &msc SCRL_LEFT  &mkp MB3        &msc SCRL_RIGHT  &msc SCRL_UP    &msc MOVE_Y(20)     &none
 &none    &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI         &mmv MOVE_Y(300)     &msc SCRL_UP                      &mkp MB4        &mmv MOVE_UP    &mkp MB5         &msc SCRL_DOWN  &msc (MOVE_Y(-20))  &none
 &none    &none             &none         &mmv (MOVE_X(-300))  &mmv (MOVE_Y(-300))  &mmv MOVE_X(300)  &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none           &none               &none
-&none    &none             &none         &mo 7                &trans               &trans                            &mkp MB1        &mkp MB2        &kp N5           &none           &none               &none
+&none    &none             &none         &trans               &trans               &trans                            &mkp MB1        &mkp MB2        &kp N5           &none           &none               &none
             >;
 
             sensor-bindings =
@@ -293,10 +293,10 @@
         KeyPad_layer {
             display-name = "NumPad";
             bindings = <
-&mo 7  &none  &none  &none  &none  &kp K_CALCULATOR                  &kp KP_N7        &kp KP_N8        &kp KP_N9   &kp KP_PLUS   &kp KP_MULTIPLY  &none
-&none  &none  &none  &none  &none  &none                             &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_N6   &kp KP_MINUS  &kp KP_DIVIDE    &none
-&none  &none  &none  &none  &none  &none             &trans  &trans  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_N3   &kp KP_EQUAL  &none            &none
-&none  &none  &none  &none  &none  &mo 7                             &kp KP_ENTER     &kp KP_NUMBER_0  &kp KP_DOT  &none         &none            &none
+&mo 7  &none  &none  &none   &none   &kp K_CALCULATOR                  &kp KP_N7        &kp KP_N8        &kp KP_N9   &kp KP_PLUS   &kp KP_MULTIPLY  &none
+&none  &none  &none  &none   &none   &none                             &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_N6   &kp KP_MINUS  &kp KP_DIVIDE    &none
+&none  &none  &none  &none   &none   &none             &trans  &trans  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_N3   &kp KP_EQUAL  &none            &none
+&none  &none  &none  &trans  &trans  &trans                            &kp KP_ENTER     &kp KP_NUMBER_0  &kp KP_DOT  &none         &none            &none
             >;
         };
 
@@ -315,7 +315,7 @@
 &kp GRAVE  &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT                  &kp CARET  &kp AMPS      &kp ASTRK  &kp LPAR   &kp RPAR  &kp BACKSPACE
 &none      &none     &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC                   &none      &kp MINUS     &kp EQUAL  &kp LBKT   &kp RBKT  &kp BACKSLASH
 &none      &none     &kp RBKT  &kp RPAR  &kp PIPE  &kp BSLH   &trans  &trans  &kp FSLH   &kp QUESTION  &kp GRAVE  &kp TILDE  &kp SQT   &none
-&none      &none     &none     &none     &trans    &trans                     &kp ENTER  &trans        &kp GRAVE  &none      &none     &none
+&none      &none     &none     &trans    &trans    &trans                     &kp ENTER  &trans        &kp GRAVE  &none      &none     &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
