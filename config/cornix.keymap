@@ -51,7 +51,7 @@
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <200>;                // repeat on tap-into-hold
-            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+            require-prior-idle-ms = <200>;
             hold-trigger-on-release;
         };
 
@@ -63,10 +63,9 @@
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <200>;
-            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+            require-prior-idle-ms = <200>;
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
             hold-trigger-on-release;
-            retro-tap;
         };
 
         // Positional Homerow mods for shift
@@ -83,7 +82,7 @@
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
             quick-tap-ms = <200>;
-            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+            require-prior-idle-ms = <200>;
             hold-trigger-key-positions = <KEYS_R KEYS_T>;
             hold-trigger-on-release;
             retro-tap;
@@ -97,7 +96,7 @@
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM_FAST>;
             quick-tap-ms = <200>;
-            require-prior-idle-ms = <HM_PRIOR_IDLE>;
+            require-prior-idle-ms = <200>;
             hold-trigger-key-positions = <KEYS_L KEYS_T>;
 
             // for quick tapping; shift+~
@@ -124,6 +123,8 @@
             flavor = "balanced";
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <200>;
+            require-prior-idle-ms = <200>;
+            hold-trigger-on-release;
         };
 
         lt: layer_tap {
@@ -145,6 +146,8 @@
             quick-tap-ms = <200>;
             tapping-term-ms = <200>;
             flavor = "balanced";
+            require-prior-idle-ms = <200>;
+            hold-trigger-on-release;
         };
 
         flip_toggle: flip_toggle {
@@ -161,6 +164,10 @@
             quick-tap-ms = <200>;
             tapping-term-ms = <200>;
             bindings = <&flip_layer>, <&kp>;
+
+            require-prior-idle-ms = <200>;
+            hold-trigger-on-release;
+            flavor = "balanced";
         };
 
         flip_layer: flip_layer {
@@ -179,6 +186,9 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
             retro-tap;
+            require-prior-idle-ms = <200>;
+            hold-trigger-on-release;
+            flavor = "balanced";
         };
     };
 
