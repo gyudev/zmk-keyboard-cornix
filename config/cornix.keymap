@@ -190,6 +190,34 @@
             hold-trigger-on-release;
             flavor = "balanced";
         };
+
+        td_qq: td_qq {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_QQ";
+            #binding-cells = <0>;
+            bindings = <&kp Q>, <&kp LS(Q)>;
+        };
+
+        tdww: tdww {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDWW";
+            #binding-cells = <0>;
+            bindings = <&kp W>, <&kp LS(W)>;
+        };
+
+        tdrr: tdrr {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDRR";
+            #binding-cells = <0>;
+            bindings = <&kp R>, <&kp LS(R)>;
+        };
+
+        tdtt: tdtt {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDTT";
+            #binding-cells = <0>;
+            bindings = <&kp T>, <&kp LS(T)>;
+        };
     };
 
     conditional_layers {
@@ -255,10 +283,14 @@
             label = "DESKTOP";
         };
 
-        new_macro: new_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none>;
+        Param1: new_macro {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_param_1to1>,
+                <&macro_tap>,
+                <&kp MACRO_PLACEHOLDER>;
+
             label = "NEW_MACRO";
         };
     };
@@ -277,10 +309,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp TAB              &kp Q                &kp W               &kp E                    &kp R                &kp T                                                           &hm INSERT Y     &hm HOME U           &hm END I                    &kp O                   &kp P                          &kp BACKSPACE
-&hm_screen 0 ESCAPE  &hm_shift_l LCTRL A  &hm_shift_l LALT S  &hm_l LGUI D             &hm_shift_l LSHFT F  &kp G                                                           &hm DELETE H     &hm_shift_r RSHFT J  &hm_r RGUI K                 &hm_shift_r LEFT_ALT L  &hm_shift_r LEFT_CONTROL SEMI  &kp SQT
-&kp LEFT_SHIFT       &kp Z                &kp X               &kp C                    &kp V                &kp B                   &kp C_MUTE  &hm (LG(LC(F4))) LG(LC(D))  &kp N            &kp M                &kp COMMA                    &kp DOT                 &kp UP_ARROW                   &kp SLASH
-&mo 1                &mo 3                &mo 2               &hm_flip_layer 2 ESCAPE  &tog 3               &hm_flip_layer 1 SPACE                                          &hm ENTER SPACE  &kp ENTER            &hm LANG_HANJA LANG_HANGEUL  &kp LEFT_ARROW          &kp DOWN_ARROW                 &kp RIGHT_ARROW
+&kp TAB              &kp Q                &kp W               &kp E                    &tdrr                 &tdtt                                                           &hm INSERT Y     &hm HOME U           &hm END I             &kp O                   &kp P                          &kp BACKSPACE
+&hm_screen 0 ESCAPE  &hm_shift_l LCTRL A  &hm_shift_l LALT S  &hm_l LGUI D             &hm_shift_l LSHFT F   &kp G                                                           &hm DELETE H     &hm_shift_r RSHFT J  &hm_r RGUI K          &hm_shift_r LEFT_ALT L  &hm_shift_r LEFT_CONTROL SEMI  &kp SQT
+&kp LEFT_SHIFT       &kp MINUS            &kp Z               &kp X                    &kp C                 &kp V                   &kp C_MUTE  &hm (LG(LC(F4))) LG(LC(D))  &kp B            &kp N                &kp M                 &kp DOT                 &kp UP_ARROW                   &kp SLASH
+&mo 1                &mo 3                &mo 2               &hm_flip_layer 2 ESCAPE  &Rhm_fl LEFT_SHIFT 3  &hm_flip_layer 1 SPACE                                          &hm ENTER SPACE  &kp ENTER            &hm LANGUAGE_2 LANG1  &kp LEFT_ARROW          &kp DOWN_ARROW                 &kp RIGHT_ARROW
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -290,8 +322,8 @@
             display-name = "Navi";
             bindings = <
 &kp TAB  &none             &none         &none                &kp PAGE_UP          &kp PAGE_DOWN                     &msc SCRL_LEFT  &mkp MB3        &msc SCRL_RIGHT  &msc SCRL_UP    &msc MOVE_Y(20)     &none
-&none    &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI         &mmv MOVE_Y(300)     &msc SCRL_UP                      &mkp MB4        &mmv MOVE_UP    &mkp MB5         &msc SCRL_DOWN  &msc (MOVE_Y(-20))  &none
-&none    &none             &none         &mmv (MOVE_X(-300))  &mmv (MOVE_Y(-300))  &mmv MOVE_X(300)  &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none           &none               &none
+&none    &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI         &mmv (MOVE_Y(-300))  &msc SCRL_UP                      &mkp MB4        &mmv MOVE_UP    &mkp MB5         &msc SCRL_DOWN  &msc (MOVE_Y(-20))  &none
+&none    &none             &none         &mmv (MOVE_X(-300))  &mmv MOVE_Y(300)     &mmv MOVE_X(300)  &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none           &none               &none
 &none    &none             &none         &trans               &trans               &trans                            &mkp MB1        &mkp MB2        &kp N5           &none           &none               &none
             >;
 
@@ -405,6 +437,20 @@
 &none       &none         &none         &none         &none         &bootloader   &trans  &trans  &bootloader  &none  &none   &none  &none  &none
 &none       &none         &none         &none         &none         &none                         &none        &none  &kp N7  &none  &none  &none
             >;
+        };
+
+        defaultback {
+            display-name = "Base";
+            bindings = <
+&kp TAB              &kp Q                &kp W               &kp E                    &tdrr                &tdtt                                                           &hm INSERT Y     &hm HOME U           &hm END I             &kp O                   &kp P                          &kp BACKSPACE
+&hm_screen 0 ESCAPE  &hm_shift_l LCTRL A  &hm_shift_l LALT S  &hm_l LGUI D             &hm_shift_l LSHFT F  &kp G                                                           &hm DELETE H     &hm_shift_r RSHFT J  &hm_r RGUI K          &hm_shift_r LEFT_ALT L  &hm_shift_r LEFT_CONTROL SEMI  &kp SQT
+&kp LEFT_SHIFT       &kp Z                &kp X               &kp C                    &kp V                &kp B                   &kp C_MUTE  &hm (LG(LC(F4))) LG(LC(D))  &kp N            &kp M                &kp COMMA             &kp DOT                 &kp UP_ARROW                   &kp SLASH
+&mo 1                &mo 3                &mo 2               &hm_flip_layer 2 ESCAPE  &tog 3               &hm_flip_layer 1 SPACE                                          &hm ENTER SPACE  &kp ENTER            &hm LANGUAGE_2 LANG1  &kp LEFT_ARROW          &kp DOWN_ARROW                 &kp RIGHT_ARROW
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
+                <&inc_dec_kp PG_UP PG_DN>;
         };
     };
 };
