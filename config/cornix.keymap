@@ -312,7 +312,7 @@
 &kp TAB              &kp Q                &kp W               &kp E                    &tdrr                 &tdtt                                                           &hm INSERT Y     &hm HOME U           &hm END I             &kp O                   &kp P                          &kp BACKSPACE
 &hm_screen 0 ESCAPE  &hm_shift_l LCTRL A  &hm_shift_l LALT S  &hm_l LGUI D             &hm_shift_l LSHFT F   &kp G                                                           &hm DELETE H     &hm_shift_r RSHFT J  &hm_r RGUI K          &hm_shift_r LEFT_ALT L  &hm_shift_r LEFT_CONTROL SEMI  &kp SQT
 &kp LEFT_SHIFT       &kp MINUS            &kp Z               &kp X                    &kp C                 &kp V                   &kp C_MUTE  &hm (LG(LC(F4))) LG(LC(D))  &kp B            &kp N                &kp M                 &kp DOT                 &kp UP_ARROW                   &kp SLASH
-&mo 1                &mo 3                &mo 2               &hm_flip_layer 2 ESCAPE  &Rhm_fl LEFT_SHIFT 3  &hm_flip_layer 1 SPACE                                          &hm ENTER SPACE  &kp ENTER            &hm LANGUAGE_2 LANG1  &kp LEFT_ARROW          &kp DOWN_ARROW                 &kp RIGHT_ARROW
+&kp NUMBER_0         &kp NUMBER_2         &mo 2               &hm_flip_layer 2 ESCAPE  &Rhm_fl LEFT_SHIFT 3  &hm_flip_layer 1 SPACE                                          &hm ENTER SPACE  &kp ENTER            &hm LANGUAGE_2 LANG1  &kp LEFT_ARROW          &kp DOWN_ARROW                 &kp RIGHT_ARROW
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
