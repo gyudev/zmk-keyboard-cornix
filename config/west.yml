@@ -47,9 +47,9 @@ manifest:
       remote: zzeneg
       revision: main
 
-    # - name: zmk-keypeek-layer-notifier
-    #   remote: srwi
-    #   revision: main
+    - name: zmk-keypeek-layer-notifier
+      remote: srwi
+      revision: master
       
   self:
     path: config
