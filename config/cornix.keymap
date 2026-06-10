@@ -297,14 +297,14 @@
             layers = <0 6>;
         };
 
-        layer3 {
-            bindings = <&kp N3>;
-            key-positions = <5 6>;
-        };
-
         layer4 {
             bindings = <&kp N4>;
             key-positions = <5 6>;
+        };
+
+        alt_f4 {
+            bindings = <&kp LA(F4)>;
+            key-positions = <43 44>;
         };
     };
 
