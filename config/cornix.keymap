@@ -322,24 +322,6 @@
             bindings = <&kt LG(LS(S))>;
             label = "SCREENSHOT";
         };
-
-        Desktop: Desktop {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none>;
-            label = "DESKTOP";
-        };
-
-        Param1: new_macro {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings =
-                <&macro_param_1to1>,
-                <&macro_tap>,
-                <&kp MACRO_PLACEHOLDER>;
-
-            label = "NEW_MACRO";
-        };
     };
 
     keymap {
@@ -356,10 +338,10 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&hm_screen 0 ESCAPE  &td_qq               &td_ww              &td_ee        &td_rr               &td_tt                                                        &hm INSERT Y     &hm HOME U           &hm END I             &td_oo                  &td_pp                         &kp BACKSPACE
-&kp TAB              &hm_shift_l LCTRL A  &hm_shift_l LALT S  &hm_l LGUI D  &hm_shift_l LSHFT F  &kp G                                                         &hm DELETE H     &hm_shift_r RSHFT J  &hm_r RGUI K          &hm_shift_r LEFT_ALT L  &hm_shift_r LEFT_CONTROL SEMI  &kp SQT
-&kp LEFT_SHIFT       &kp MINUS            &kp Z               &kp X         &kp C                &kp V                   &kp C_MUTE  &hm LG(LC(F4)) LG(LC(D))  &kp B            &kp N                &kp M                 &kp COMMA               &kp UP_ARROW                   &kp SLASH
-&kp NUMBER_0         &kp NUMBER_2         &kp DOT             &mo 2         &hm_sl LEFT_SHIFT 3  &hm_flip_layer 1 SPACE                                        &hm ENTER SPACE  &kp ENTER            &hm LANGUAGE_2 LANG1  &kp LEFT_ARROW          &kp DOWN_ARROW                 &kp RIGHT_ARROW
+&hm_screen 0 ESCAPE  &td_qq               &td_ww              &td_ee        &td_rr               &td_tt                                                        &hm INSERT Y     &hm HOME U           &hm END I             &td_oo                  &td_pp                              &kp BACKSPACE
+&kp TAB              &hm_shift_l LCTRL A  &hm_shift_l LALT S  &hm_l LGUI D  &hm_shift_l LSHFT F  &kp G                                                         &hm DELETE H     &hm_shift_r RSHFT J  &hm_r RGUI K          &hm_shift_r LEFT_ALT L  &hm_shift_r LEFT_CONTROL SEMICOLON  &kp BACKSLASH
+&kp LEFT_SHIFT       &kp MINUS            &kp Z               &kp X         &kp C                &kp V                   &kp C_MUTE  &hm LG(LC(F4)) LG(LC(D))  &kp B            &kp N                &kp M                 &kp COMMA               &kp DOT                             &kp SLASH
+&kp LCTRL            &kp LEFT_GUI         &kp GRAVE           &mo 2         &hm_sl LEFT_SHIFT 3  &hm_flip_layer 1 SPACE                                        &hm ENTER SPACE  &kp ENTER            &hm LANGUAGE_2 LANG1  &td_Lset                &kp AT                              &td_Rset
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -368,10 +350,10 @@
         Navi_layer {
             display-name = "Navi";
             bindings = <
-&kp TAB  &kp C_PIP         &none         &none              &kp PAGE_UP        &kp PAGE_DOWN                     &msc SCRL_LEFT  &mkp MB3        &msc SCRL_RIGHT  &msc SCRL_UP    &msc MOVE_Y(20)   &none
-&none    &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI       &mmv MOVE_Y(-600)  &msc SCRL_UP                      &mkp MB4        &mmv MOVE_UP    &mkp MB5         &msc SCRL_DOWN  &msc MOVE_Y(-20)  &none
-&none    &none             &none         &mmv MOVE_X(-600)  &mmv MOVE_Y(600)   &mmv MOVE_X(600)  &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none           &none             &none
-&none    &none             &none         &trans             &trans             &trans                            &mkp MB1        &mkp MB2        &kp N5           &none           &none             &none
+&kp TAB  &kp C_PIP         &none         &none           &kp PAGE_UP     &kp PAGE_DOWN                    &msc SCRL_LEFT  &mkp MB3        &msc SCRL_RIGHT  &msc SCRL_UP       &msc MOVE_Y(20)    &none
+&none    &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI    &kp UP_ARROW    &msc SCRL_UP                     &mkp MB4        &mmv MOVE_UP    &mkp MB5         &msc SCRL_DOWN     &msc MOVE_Y(-20)   &none
+&none    &none             &none         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none              &mmv MOVE_Y(-600)  &none
+&none    &none             &none         &trans          &trans          &trans                           &mkp MB1        &mkp MB2        &kp N5           &mmv MOVE_X(-600)  &mmv MOVE_Y(600)   &mmv MOVE_X(600)
             >;
 
             sensor-bindings =
@@ -401,10 +383,10 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-&kp GRAVE  &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT                  &kp CARET  &kp AMPS      &kp ASTRK  &td_Lset   &td_Rset  &kp BACKSPACE
-&none      &none     &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC                   &none      &kp MINUS     &kp EQUAL  &kp LBKT   &kp RBKT  &kp BACKSLASH
-&none      &none     &kp RBKT  &kp RPAR  &kp PIPE  &kp BSLH   &trans  &trans  &kp FSLH   &kp QUESTION  &kp GRAVE  &kp TILDE  &kp SQT   &none
-&none      &none     &none     &trans    &trans    &trans                     &kp ENTER  &trans        &kp GRAVE  &none      &none     &none
+&kp GRAVE       &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT                  &kp CARET  &kp AMPS      &kp ASTRK  &td_Lset   &td_Rset   &kp BACKSPACE
+&none           &none     &kp STAR  &kp PLUS  &td_Lset  &kp RBRC                   &none      &td_Rset      &kp MINUS  &kp SLASH  &kp EQUAL  &kp SQT
+&kp LEFT_SHIFT  &none     &kp RBKT  &kp RPAR  &kp PIPE  &kp BSLH   &trans  &trans  &kp FSLH   &kp QUESTION  &kp GRAVE  &kp TILDE  &kp SQT    &none
+&none           &none     &none     &trans    &trans    &trans                     &kp MINUS  &kp TILDE     &kp DOT    &none      &none      &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
