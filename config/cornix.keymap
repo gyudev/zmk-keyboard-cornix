@@ -381,10 +381,10 @@
         KeyPad_layer {
             display-name = "NumPad";
             bindings = <
-&mo 0  &none  &none  &none   &none   &kp C_AL_CALC                  &kp KP_N7        &kp KP_N8        &kp KP_N9   &kp KP_PLUS   &kp KP_MULTIPLY  &kp BACKSPACE
-&none  &none  &none  &none   &none   &none                          &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_N6   &kp KP_MINUS  &kp KP_DIVIDE    &none
-&none  &none  &none  &none   &none   &none          &trans  &trans  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_N3   &kp KP_EQUAL  &none            &none
-&none  &none  &none  &trans  &trans  &trans                         &kp KP_ENTER     &kp KP_NUMBER_0  &kp KP_DOT  &none         &none            &none
+&mo 0  &none  &none  &none   &none   &kp C_AL_CALC                  &kp KP_N7        &kp KP_N8        &kp KP_N9        &kp KP_PLUS   &kp KP_MULTIPLY  &kp BACKSPACE
+&none  &none  &none  &none   &none   &none                          &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_N6        &kp KP_MINUS  &kp KP_DIVIDE    &none
+&none  &none  &none  &none   &none   &none          &trans  &trans  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_N3        &kp KP_EQUAL  &none            &none
+&none  &none  &none  &trans  &trans  &trans                         &kp KP_DOT       &kp KP_ENTER     &kp KP_NUMBER_0  &none         &none            &none
             >;
         };
 
